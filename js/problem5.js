@@ -33,4 +33,33 @@
      count: 7
  */
 
-// Write your JavaScript here
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+function languageFormatter(advertisement) {
+
+    var hindi = advertisement[0];
+    var urdu = advertisement[1];
+    var english = advertisement[2];
+    changeElementText("#hindi", advertisement[0].join(" "));
+    changeElementText("#urdu", advertisement[1].join(" "));
+    changeElementText("#english", advertisement[2].join(" "));
+    urdu = reverseArray(urdu);
+    var totalLength = hindi.length + urdu.length + english.length;
+    var finalAd = [hindi.join(" "), urdu.join(" "), english.join(" ")].join(" ")
+    changeElementText("#finalAd", finalAd);
+    console.log(totalLength);
+    changeElementText("#count", totalLength);
+
+
+
+}
+
+function reverseArray(arr){
+  var newArr = []
+  for (var i = arr.length - 1; i >= 0; i--) {
+    newArr.push(arr[i]);
+  }
+  return newArr;
+}

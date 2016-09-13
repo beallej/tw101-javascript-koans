@@ -26,4 +26,21 @@
 
 */
 
-// Write your JavaScript here
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+function totalCurrency(currencyArray) {
+    changeElementText("#currency", currencyArray);
+    var total = 0;
+    var validDenominations = {5:true, 10:true, 20:true, 50:true, 100:true, 500:true}
+    var i = 0;
+    do {
+        total += currencyArray[i];
+        i += 1;
+
+    } while(validDenominations[currencyArray[i]]);
+
+    changeElementText("#total", total);
+
+}
